@@ -40,7 +40,8 @@ document.body.addEventListener("click", event => {
     tmp.style.backgroundColor = "green"; 
     i=0;
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = audioCtx.createOscillator();	  
+    const oscillator = audioCtx.createOscillator();
+    oscillator.connect(audioCtx.destination);
     oscillator.stop();
   } else {
     tmp.style.backgroundColor = "yellow"; i=1; 
