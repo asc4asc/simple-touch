@@ -32,8 +32,8 @@ var audio = new	Audio(
 function beep() {
 // create web audio api context
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-// create Oscillator node
-const oscillator = audioCtx.createOscillator();
+// create Oscillator node  
+const oscillator = audioCt.createOscillator();
 
   oscillator.type = 'square';
   oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
@@ -44,9 +44,9 @@ const oscillator = audioCtx.createOscillator();
   }, 500);  	
 }
  
-openFullscreen(); 
 
 document.body.addEventListener("click", event => {
+  openFullscreen(); 
   if (i == 1) {
     tmp.style.backgroundColor = "green"; 
     i=0;
