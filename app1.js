@@ -32,13 +32,20 @@ const oscillator = audioCtx.createOscillator();
   // oscillator.stop();
 }
 
+const oscillator = audioCtx.createOscillator();
+  oscillator.type = 'square';
+  oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
+  oscillator.connect(audioCtx.destination);
+  
 document.body.addEventListener("click", event => {
   if (i == 1) {
-    tmp.style.backgroundColor = "green"; i=0; 
+    tmp.style.backgroundColor = "green"; 
+    i=0;
+    oscillator.stop();
   } else {
     tmp.style.backgroundColor = "yellow"; i=1; 
-    openFullscreen();
-    beep3();
+    // openFullscreen();
+    oscillator.start();	  
   }
 });
 
