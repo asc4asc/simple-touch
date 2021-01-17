@@ -26,7 +26,9 @@ const oscillator = audioCtx.createOscillator();
   oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
   oscillator.connect(audioCtx.destination);
   oscillator.start();
-  sleep(1);
+  setTimeout(function(){ 
+    oscillator.stop();
+  }, 1000);  	
   oscillator.stop();
 }
 
