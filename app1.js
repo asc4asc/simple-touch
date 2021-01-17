@@ -29,7 +29,7 @@ const oscillator = audioCtx.createOscillator();
   setTimeout(function(){ 
     oscillator.stop();
   }, 1000);  	
-  oscillator.stop();
+  // oscillator.stop();
 }
 
 document.body.addEventListener("click", event => {
