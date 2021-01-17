@@ -5,6 +5,8 @@ tmp.style.backgroundColor = "blue";
 
 let i=1;
 var elem = document.documentElement;
+openFullscreen();  
+
 function openFullscreen() {
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
@@ -58,6 +60,4 @@ document.body.addEventListener("click", event => {
   }
 });
 
-(function () {
-  openFullscreen();  // I will invoke myself
-})();
+
