@@ -28,8 +28,7 @@ const oscillator = audioCtx.createOscillator();
   oscillator.start();
   setTimeout(function(){ 
     oscillator.stop();
-  }, 1000);  	
-  // oscillator.stop();
+  }, 500);  	
 }
 
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
