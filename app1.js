@@ -51,7 +51,8 @@ document.body.addEventListener("click", event => {
     tmp.style.backgroundColor = "green"; 
     i=0;
     beep();
-    } else {
+    window.navigator.vibrate(1000);
+  } else {
     tmp.style.backgroundColor = "yellow"; 
     i=1; 
   }
