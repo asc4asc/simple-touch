@@ -16,12 +16,12 @@ var audio = new	Audio(
    audio.play();
 }
 
-function beep3() {
+function beep() {
 // create web audio api context
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
 // create Oscillator node
 const oscillator = audioCtx.createOscillator();
+
   oscillator.type = 'square';
   oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
   oscillator.connect(audioCtx.destination);
@@ -30,19 +30,17 @@ const oscillator = audioCtx.createOscillator();
     oscillator.stop();
   }, 500);  	
 }
+ 
+openFullscreen(); 
 
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-const oscillator = audioCtx.createOscillator();
-  
 document.body.addEventListener("click", event => {
   if (i == 1) {
     tmp.style.backgroundColor = "green"; 
     i=0;
-    beep3();
+    beep();
     } else {
     tmp.style.backgroundColor = "yellow"; 
     i=1; 
-    // openFullscreen();  
   }
 });
 
