@@ -32,12 +32,6 @@ const oscillator = audioCtx.createOscillator();
   // oscillator.stop();
 }
 
-// create web audio api context
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-const oscillator = audioCtx.createOscillator();
-  oscillator.type = 'square';
-  oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
-  oscillator.connect(audioCtx.destination);
   
 document.body.addEventListener("click", event => {
   if (i == 1) {
@@ -47,7 +41,13 @@ document.body.addEventListener("click", event => {
   } else {
     tmp.style.backgroundColor = "yellow"; i=1; 
     // openFullscreen();
-    oscillator.start();	  
+    // create web audio api context
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const oscillator = audioCtx.createOscillator();
+      oscillator.type = 'square';
+      oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
+      oscillator.connect(audioCtx.destination);
+      oscillator.start();	  
   }
 });
 
