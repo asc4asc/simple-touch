@@ -39,20 +39,11 @@ document.body.addEventListener("click", event => {
   if (i == 1) {
     tmp.style.backgroundColor = "green"; 
     i=0;
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = audioCtx.createOscillator();
-    oscillator.connect(audioCtx.destination);
-    oscillator.stop();
-  } else {
-    tmp.style.backgroundColor = "yellow"; i=1; 
-    // openFullscreen();
-    // create web audio api context
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = audioCtx.createOscillator();
-    oscillator.type = 'square';
-    oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
-    oscillator.connect(audioCtx.destination);
-    oscillator.start();	  
+    beep3();
+    } else {
+    tmp.style.backgroundColor = "yellow"; 
+    i=1; 
+    // openFullscreen();  
   }
 });
 
