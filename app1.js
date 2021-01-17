@@ -29,7 +29,7 @@ var audio = new	Audio(
    audio.play();
 }
 
-function beep3() {
+function beep() {
 // create web audio api context
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 // create Oscillator node  
@@ -50,7 +50,7 @@ document.body.addEventListener("click", event => {
   if (i == 1) {
     tmp.style.backgroundColor = "green"; 
     i=0;
-    beep3();
+    beep();
     } else {
     tmp.style.backgroundColor = "yellow"; 
     i=1; 
