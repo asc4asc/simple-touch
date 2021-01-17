@@ -59,7 +59,5 @@ document.body.addEventListener("click", event => {
 });
 
 (function () {
-  function starMe() {
-    openFullscreen(); 	  
-  }
-});
+  openFullscreen();  // I will invoke myself
+})();
