@@ -33,7 +33,7 @@ function beep3() {
 // create web audio api context
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 // create Oscillator node  
-const oscillator = audioCt.createOscillator();
+const oscillator = audioCtx.createOscillator();
 
   oscillator.type = 'square';
   oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
