@@ -22,11 +22,12 @@ const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
 // create Oscillator node
 const oscillator = audioCtx.createOscillator();
-
-oscillator.type = 'square';
-oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
-oscillator.connect(audioCtx.destination);
-oscillator.start();
+  oscillator.type = 'square';
+  oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
+  oscillator.connect(audioCtx.destination);
+  oscillator.start();
+  sleep(1);
+  oscillator.stop();
 }
 
 document.body.addEventListener("click", event => {
