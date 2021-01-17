@@ -5,7 +5,9 @@ tmp.style.backgroundColor = "blue";
 
 let i=1;
 
-function beep() { 
+new beep(22050).play(1000, 1, [beep.utils.amplify(8000)]);
+
+function beep2() { 
 var audio = new Audio('https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3'); 
     audio.play(); 
 }
