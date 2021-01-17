@@ -32,6 +32,8 @@ const oscillator = audioCtx.createOscillator();
   // oscillator.stop();
 }
 
+// create web audio api context
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const oscillator = audioCtx.createOscillator();
   oscillator.type = 'square';
   oscillator.frequency.setValueAtTime(440, audioCtx.currentTime); // value in hertz
